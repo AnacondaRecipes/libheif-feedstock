@@ -13,20 +13,19 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/strukturag/libheif/releases/download/v{{ version }}/libheif-{{ version }}.tar.gz
+  url: https://github.com/strukturag/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
   sha256: d3cf0a76076115a070f9bc87cf5259b333a1f05806500045338798486d0afbaf
 
 build:
   number: {{ build }}
   string: {{ license_family }}_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
-  run_exports:
-    - {{ pin_subpackage('libheif', max_pin='x.x') }}
 
 requirements:
   build:
+    - python  # otherwise it will fail on conda build
     - gnuconfig  # [unix]
     - {{ compiler('cxx') }}
-    - {{ stdlib('c') }}
+    # - {{ stdlib('c') }}  # issues an error of 'c_osx-arm64 not exists'
     - cmake
     - ninja
   host:
