@@ -21,8 +21,9 @@ build:
   string: {{ license_family }}_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
 
 requirements:
-  build:
+  host:
     - python  # otherwise it will fail on conda build
+  build:
     - gnuconfig  # [unix]
     - {{ compiler('cxx') }}
     # - {{ stdlib('c') }}  # issues an error of 'c_osx-arm64 not exists'
