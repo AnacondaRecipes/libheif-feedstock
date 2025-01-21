@@ -24,6 +24,7 @@ requirements:
   host:
     - python  # otherwise it will fail on conda build
   build:
+    - python  # otherwise it will fail on conda build
     - gnuconfig  # [unix]
     - {{ compiler('cxx') }}
     # - {{ stdlib('c') }}  # issues an error of 'c_osx-arm64 not exists'
