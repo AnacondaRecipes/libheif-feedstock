@@ -21,8 +21,6 @@ build:
   string: {{ license_family }}_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
 
 requirements:
-  host:
-    - python  # otherwise it will fail on conda build
   build:
     - python  # otherwise it will fail on conda build
     - gnuconfig  # [unix]
@@ -31,6 +29,7 @@ requirements:
     - cmake
     - ninja
   host:
+    - python  # otherwise it will fail on conda build
     - libde265
     - libavif
     # - svt-av1
