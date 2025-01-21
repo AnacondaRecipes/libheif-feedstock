@@ -35,9 +35,11 @@ requirements:
     # - rav1e
     - dav1d
     - aom
-    - x265  # [license_family == 'gpl']
+    # - x265  # [license_family == 'gpl']
+    - x265
   run:
-    - x265  # [license_family == 'gpl']
+    # - x265  # [license_family == 'gpl']
+    - x265
 
 test:
   commands:
