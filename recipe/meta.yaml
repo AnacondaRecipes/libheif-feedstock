@@ -36,6 +36,8 @@ requirements:
     - dav1d
     - aom
     - x265  # [license_family == 'gpl']
+  run:
+    - x265  # [license_family == 'gpl']
 
 test:
   commands:
