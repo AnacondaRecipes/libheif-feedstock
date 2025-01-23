@@ -10,8 +10,8 @@ source:
   sha256: d3cf0a76076115a070f9bc87cf5259b333a1f05806500045338798486d0afbaf
 
 build:
-  # x265 not available for s390x
-  skip: True  # [s390x]
+  # x265 not available for s390x and win
+  skip: True  # [s390x or win]
   number: 0
   run_exports:
     - {{ pin_subpackage('libheif', max_pin='x.x') }}
