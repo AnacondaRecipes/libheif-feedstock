@@ -14,7 +14,7 @@ build:
   skip: True  # [s390x]
   number: 0
   run_exports:
-    - {{ pin_subpackage('libheif', max_pin='x.x.x') }}
+    - {{ pin_subpackage('libheif', max_pin='x.x') }}
 
 requirements:
   build:
