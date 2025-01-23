@@ -21,7 +21,7 @@ requirements:
     - gnuconfig  # [unix]
     - {{ compiler('cxx') }}
     - cmake
-    - ninja
+    - ninja-base
   host:
     - libde265
     - dav1d
