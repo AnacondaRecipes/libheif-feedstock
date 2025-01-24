@@ -9,6 +9,8 @@ cmake -G "Ninja" ^
   -DWITH_EXAMPLES=OFF ^
   -DWITH_SvtEnc=OFF ^
   -DWITH_RAV1E=OFF ^
+  -DWITH_DAV1D=ON ^
+  -DWITH_DAV1D_PLUGIN=OFF ^
   -DBUILD_TESTING=OFF ^
   ..
 if errorlevel 1 exit 1
