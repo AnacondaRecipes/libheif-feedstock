@@ -25,7 +25,7 @@ requirements:
   host:
     - libde265 1.0.15
     - dav1d 1.2.1
-    - aom 3.14
+    - aom {{ aom }}
     - x265 3.5
   run:
     - libde265
