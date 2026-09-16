@@ -12,7 +12,7 @@ source:
 build:
   # x265 not available for s390x and win
   skip: True  # [s390x or win]
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('libheif', max_pin='x.x') }}
 
