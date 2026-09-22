@@ -1,23 +1,24 @@
 {% set name = "libheif" %}
-{% set version = "1.19.5" %}
+{% set version = "1.23.5" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
   url: https://github.com/strukturag/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d3cf0a76076115a070f9bc87cf5259b333a1f05806500045338798486d0afbaf
+  sha256: fd9036064c4432f0550d15072ddf34956a248279ee9aeaff0fba3fa0f77d8f1a
 
 build:
-  # x265 not available for s390x and win
-  skip: True  # [s390x or win]
-  number: 1
+  # x265 not available for win
+  skip: true  # [win]
+  number: 0
   run_exports:
     - {{ pin_subpackage('libheif', max_pin='x.x') }}
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - gnuconfig  # [unix]
     - {{ compiler('cxx') }}
     - cmake
