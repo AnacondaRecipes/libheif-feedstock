@@ -8,6 +8,11 @@ package:
 source:
   url: https://github.com/strukturag/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
   sha256: fd9036064c4432f0550d15072ddf34956a248279ee9aeaff0fba3fa0f77d8f1a
+  patches:
+    # Work around broken AOM CMake metadata in the Anaconda package.
+    # The exported AOM::aom_static target references a static archive that is not installed,
+    # so force libheif to use its existing pkg-config/library fallback instead.
+    - 0001-use-pkg-config-for-aom.patch
 
 build:
   # x265 not available for win

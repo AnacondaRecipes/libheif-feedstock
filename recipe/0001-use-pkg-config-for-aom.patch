@@ -1,0 +1,11 @@
+diff --git a/cmake/modules/FindAOM.cmake b/cmake/modules/FindAOM.cmake
+index a357cf77..3de5d6ef 100644
+--- a/cmake/modules/FindAOM.cmake
++++ b/cmake/modules/FindAOM.cmake
+@@ -1,4 +1,5 @@
+-find_package(AOM QUIET CONFIG)
++# Anaconda's shared-only AOM package exports a static CMake target
++# whose archive is not installed. Use the existing pkg-config fallback.
+ 
+ if(TARGET AOM::aom)
+   if(NOT AOM_FIND_QUIETLY)
