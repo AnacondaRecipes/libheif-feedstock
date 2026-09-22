@@ -29,7 +29,7 @@ requirements:
     - cmake
     - ninja-base
   host:
-    - libde265 1.0.15
+    - libde265 1.1.3
     - dav1d 1.2.1
     - aom {{ aom }}
     - x265 3.5
